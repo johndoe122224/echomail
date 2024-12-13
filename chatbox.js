@@ -1,3 +1,4 @@
+
 const messagesDiv = document.getElementById("messages");
 
 function sendMessage() {
@@ -23,7 +24,6 @@ function sendMessage() {
 }
 
 function getBotResponse(message) {
-  // Add clues or eerie replies
   const lowerCaseMsg = message.toLowerCase();
 
   if (lowerCaseMsg.includes("who are you")) {
