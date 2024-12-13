@@ -1,10 +1,11 @@
 /* General styles */
 body {
-    background-color: #f3f3f3; /* Light off-white */
+    background-color: #f8f1d4; /* Light off-white yellowish */
     color: #000; /* Black text for contrast */
     font-family: Arial, "Times New Roman", sans-serif; /* Retro system fonts */
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Layout and container styles */
@@ -101,4 +102,12 @@ audio {
     outline: none;
     border: 1px solid #cccccc;
     background-color: #f3f3f3;
+}
+
+/* Envelope icon */
+#logo {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    height: auto;
 }
