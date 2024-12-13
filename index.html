@@ -7,6 +7,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Existing Content -->
+<div class="main-content">
+  <!-- Your current site's content here -->
+</div>
+
+<!-- ARG Clues Section -->
+<section id="clue1" style="display:block;">
+  <h2>Clue 1: Pasadena</h2>
+  <p>Find the location where Eleanor went missing.</p>
+  <img src="images/pasadena-map.jpg" alt="Map of Pasadena" width="300">
+  <input type="text" id="answer1" placeholder="Enter your answer">
+  <button onclick="checkAnswer('answer1', 'paseo', 'clue2')">Submit</button>
+</section>
+
+<section id="clue2" style="display:none;">
+  <h2>Clue 2: The Paseo</h2>
+  <p>Zoom into the Paseo for more details.</p>
+  <img src="images/paseo-details.jpg" alt="The Paseo" width="300">
+  <input type="text" id="answer2" placeholder="Enter your answer">
+  <button onclick="checkAnswer('answer2', 'eleanor', 'clue3')">Submit</button>
+</section>
+
+<section id="clue3" style="display:none;">
+  <h2>Clue 3: Eleanor</h2>
+  <p>What was her name?</p>
+  <input type="text" id="answer3" placeholder="Enter her name">
+  <button onclick="checkAnswer('answer3', 'eleanor', 'clue4')">Submit</button>
+</section>
+
+<section id="clue4" style="display:none;">
+  <h2>Next Clue</h2>
+  <p>Now find the next child, Jack, in Chino Hills!</p>
+  <a href="#clue5">Go to Clue 5</a>
+</section>
+
   <div class="container">
     <h1>Welcome to EchoMail</h1>
     <p>"Where the echoes of the past linger."</p>
@@ -18,5 +53,18 @@
     <source src="Embers of Love Sad Piano Music.mp3" type="audio/mpeg">
   </audio>
     <a href="arg/index.html">Start the ARG Mystery Game</a>
+    <script>
+  function checkAnswer(inputId, correctAnswer, nextSectionId) {
+    const userAnswer = document.getElementById(inputId).value.trim();
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+      alert('Correct! Moving to the next clue.');
+      document.getElementById(nextSectionId).style.display = 'block';
+      document.getElementById(inputId).parentElement.style.display = 'none';
+    } else {
+      alert('Incorrect. Try again.');
+    }
+  }
+</script>
+
 </body>
 </html>
