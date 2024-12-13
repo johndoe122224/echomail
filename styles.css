@@ -1,101 +1,109 @@
 /* General styles */
 body {
-    font-family: "Courier New", Courier, monospace;
-    background: linear-gradient(135deg, #000 25%, #111 25%, #111 50%, #000 50%, #000 75%, #111 75%, #111);
-    background-size: 8px 8px; /* Makes the background appear pixelated */
-    color: #00ff00;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1, h2 {
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
-    color: #00ff00;
-  }
-  
-  .container, .chat-container, .inbox-container {
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid #00ff00;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #00ff00;
-  }
-  
-  /* Navigation links */
-  .nav a {
-    margin: 10px;
-    padding: 10px 20px;
-    border: 2px solid #00ff00;
-    color: #00ff00;
-    text-decoration: none;
-    display: inline-block;
-    background: linear-gradient(90deg, #000, #111);
-    box-shadow: inset 0 0 5px #00ff00;
-  }
-  
-  .nav a:hover {
-    background-color: #007700;
-  }
-  
-  /* Chatbox styles */
-  #chatbox {
-    background: #111;
-    border: 2px solid #00ff00;
-    padding: 10px;
-    height: 300px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-    font-size: 14px;
-    box-shadow: inset 0 0 10px #00ff00;
-  }
-  
-  #user-input {
-    width: 70%;
-    padding: 10px;
-    margin-top: 10px;
-    background: #000;
-    color: #00ff00;
-    border: 1px solid #00ff00;
-    box-shadow: 0 0 5px #00ff00;
-  }
-  
-  button {
-    padding: 10px;
-    background: #00ff00;
-    border: 2px solid #00ff00;
-    color: #000;
-    cursor: pointer;
-    text-shadow: 0 0 5px #000;
-    box-shadow: 0 0 5px #00ff00;
-  }
-  
-  button:hover {
-    background: #007700;
-    color: #fff;
-  }
-  
-  /* Message styles */
-  .user-message {
-    text-align: right;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5px;
-    margin: 5px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #ffffff;
-  }
-  
-  .bot-message {
-    text-align: left;
-    color: #00ff00;
-    background: rgba(0, 255, 0, 0.1);
-    padding: 5px;
-    margin: 5px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #00ff00;
-  }
-  
-  
+  font-family: "Courier New", Courier, monospace;
+  background: linear-gradient(135deg, #000 25%, #111 25%, #111 50%, #000 50%, #000 75%, #111 75%, #111);
+  background-size: 8px 8px; /* Makes the background appear pixelated */
+  color: #00ff00;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+  color: #00ff00;
+}
+
+.container, .chat-container, .inbox-container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ff00;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ff00;
+}
+
+/* Navigation links */
+.nav a {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  text-decoration: none;
+  display: inline-block;
+  background: linear-gradient(90deg, #000, #111);
+  box-shadow: inset 0 0 5px #00ff00;
+}
+
+.nav a:hover {
+  background-color: #007700;
+}
+
+/* Chatbox styles */
+#chatbox {
+  background: #111;
+  border: 2px solid #00ff00;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  font-size: 14px;
+  box-shadow: inset 0 0 10px #00ff00;
+}
+
+#user-input {
+  width: 70%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #000;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+button {
+  padding: 10px;
+  background: #00ff00;
+  border: 2px solid #00ff00;
+  color: #000;
+  cursor: pointer;
+  text-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+button:hover {
+  background: #007700;
+  color: #fff;
+}
+
+/* Message styles */
+.user-message {
+  text-align: right;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ffffff;
+}
+
+.bot-message {
+  text-align: left;
+  color: #00ff00;
+  background: rgba(0, 255, 0, 0.1);
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00ff00;
+}
+
+/* Background music */
+audio {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  width: 300px;
+  outline: none;
+}
