@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EchoMail</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to EchoMail</h1>
+    <p>"Where the echoes of the past linger."</p>
+    <div class="nav">
+      <a href="chatbot.html">Chat with Echo</a>
+      <a href="public-inbox.html">Public Inbox</a>
+    </div>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with Echo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="chat-container">
+    <h2>Chat with Echo</h2>
+    <div id="chatbox">
+      <div id="messages"></div>
+    </div>
+    <input type="text" id="user-input" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+  <script src="chatbot.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Inbox</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="inbox-container">
+    <h2>Public Inbox</h2>
+    <ul>
+      <li><strong>From:</strong> Unknown <br> <strong>Message:</strong> "Do you hear them whispering?"</li>
+      <li><strong>From:</strong> [REDACTED] <br> <strong>Message:</strong> "15 keys, 1 heart. Find me."</li>
+    </ul>
+  </div>
+</body>
+</html>
+const messagesDiv = document.getElementById("messages");
+
+function sendMessage() {
+  const input = document.getElementById("user-input");
+  const userMessage = input.value;
+
+  if (userMessage.trim() === "") return;
+
+  // Display user message
+  const userMsgDiv = document.createElement("div");
+  userMsgDiv.className = "user-message";
+  userMsgDiv.textContent = userMessage;
+  messagesDiv.appendChild(userMsgDiv);
+
+  // Simulate bot response
+  const botMessage = getBotResponse(userMessage);
+  const botMsgDiv = document.createElement("div");
+  botMsgDiv.className = "bot-message";
+  botMsgDiv.textContent = botMessage;
+  messagesDiv.appendChild(botMsgDiv);
+
+  input.value = "";
+}
+
+function getBotResponse(message) {
+  // Add clues or eerie replies
+  const lowerCaseMsg = message.toLowerCase();
+
+  if (lowerCaseMsg.includes("who are you")) {
+    return "I am Echo. Who are *you*?";
+  } else if (lowerCaseMsg.includes("children")) {
+    return "Their voices... they’re trapped. Help them.";
+  } else {
+    return "I don’t understand... yet.";
+  }
+}
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #111;
+  color: #00ff00;
+  margin: 0;
+  padding: 0;
+}
+
+.container, .chat-container, .inbox-container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1, h2 {
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.nav a {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  text-decoration: none;
+  display: inline-block;
+}
+
+#chatbox {
+  background: #000;
+  border: 1px solid #00ff00;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+#user-input {
+  width: 70%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px;
+  background: #00ff00;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #007700;
+}
