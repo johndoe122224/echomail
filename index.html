@@ -12,7 +12,31 @@
   <!-- Your current site's content here -->
 </div>
 
-<!-- ARG Clues Section -->
+  <div class="container">
+    <h1>Welcome to EchoMail</h1>
+    <p>"Where the echoes of the past linger."</p>
+    <div class="nav">
+      <a href="chatbot.html">Chat with Echo</a>
+      <a href="public-inbox.html">Public Inbox</a>
+  </div>
+  <audio autoplay loop>
+    <source src="Embers of Love Sad Piano Music.mp3" type="audio/mpeg">
+  </audio>
+    <a href="arg/index.html">Start the ARG Mystery Game</a>
+    <script>
+  function checkAnswer(inputId, correctAnswer, nextSectionId) {
+    const userAnswer = document.getElementById(inputId).value.trim();
+    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+      alert('Correct! Moving to the next clue.');
+      document.getElementById(nextSectionId).style.display = 'block';
+      document.getElementById(inputId).parentElement.style.display = 'none';
+    } else {
+      alert('Incorrect. Try again.');
+    }
+  }
+</script>
+
+    <!-- ARG Clues Section -->
 <section id="clue1" style="display:block;">
   <h2>Clue 1: Pasadena</h2>
   <p>Find the location where Eleanor went missing.</p>
@@ -41,30 +65,6 @@
   <p>Now find the next child, Jack, in Chino Hills!</p>
   <a href="#clue5">Go to Clue 5</a>
 </section>
-
-  <div class="container">
-    <h1>Welcome to EchoMail</h1>
-    <p>"Where the echoes of the past linger."</p>
-    <div class="nav">
-      <a href="chatbot.html">Chat with Echo</a>
-      <a href="public-inbox.html">Public Inbox</a>
-  </div>
-  <audio autoplay loop>
-    <source src="Embers of Love Sad Piano Music.mp3" type="audio/mpeg">
-  </audio>
-    <a href="arg/index.html">Start the ARG Mystery Game</a>
-    <script>
-  function checkAnswer(inputId, correctAnswer, nextSectionId) {
-    const userAnswer = document.getElementById(inputId).value.trim();
-    if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-      alert('Correct! Moving to the next clue.');
-      document.getElementById(nextSectionId).style.display = 'block';
-      document.getElementById(inputId).parentElement.style.display = 'none';
-    } else {
-      alert('Incorrect. Try again.');
-    }
-  }
-</script>
 
 </body>
 </html>
