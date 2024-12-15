@@ -2,24 +2,22 @@ const messagesDiv = document.getElementById("messages");
 
 function sendMessage() {
   const input = document.getElementById("user-input");
-  const userMessage = input.value;
+  const userMessage = input.value.trim();
 
-  if (userMessage.trim() === "") return;
+  if (!userMessage) return;
 
-  // Display user message
-  const userMsgDiv = document.createElement("div");
-  userMsgDiv.className = "user-message";
-  userMsgDiv.textContent = userMessage;
-  messagesDiv.appendChild(userMsgDiv);
-
-  // Simulate bot response
+  appendMessage("user-message", userMessage);
   const botMessage = getBotResponse(userMessage);
-  const botMsgDiv = document.createElement("div");
-  botMsgDiv.className = "bot-message";
-  botMsgDiv.textContent = botMessage;
-  messagesDiv.appendChild(botMsgDiv);
+  appendMessage("bot-message", botMessage);
 
   input.value = "";
+}
+
+function appendMessage(className, message) {
+  const messageDiv = document.createElement("div");
+  messageDiv.className = className;
+  messageDiv.textContent = message;
+  messagesDiv.appendChild(messageDiv);
 }
 
 function getBotResponse(message) {
