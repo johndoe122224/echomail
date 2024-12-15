@@ -8,16 +8,22 @@
 </head>
 <body>
   <div class="chat-container">
-    <h2>Chat with Echo</h2>
+    <h1>Chat with Echo</h1>
     <div id="chatbox">
       <div id="messages"></div>
     </div>
-    <input type="text" id="user-input" placeholder="Type a message..." />
-    <button onclick="sendMessage()">Send</button>
+    <form id="chat-form" onsubmit="sendMessage(event)">
+      <label for="user-input" class="visually-hidden">Type your message</label>
+      <input 
+        type="text" 
+        id="user-input" 
+        placeholder="Type a message..." 
+        required 
+        aria-label="Type a message"
+      />
+      <button type="submit">Send</button>
+    </form>
   </div>
   <script src="chatbot.js"></script>
-  <audio autoplay loop>
-    <source src="Embers of Love Sad Piano Music.mp3" type="audio/mpeg">
-  </audio>
 </body>
 </html>
