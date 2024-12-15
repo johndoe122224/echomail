@@ -1,4 +1,3 @@
-
 const messagesDiv = document.getElementById("messages");
 
 function sendMessage() {
